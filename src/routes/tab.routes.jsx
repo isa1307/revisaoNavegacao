@@ -10,27 +10,51 @@ const Tab = createBottomTabNavigator();
 
 const TabRoutes = () => {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator 
+        screenOptions={{
+            headerShown: false,
+            tabBarStyle: {
+                backgroundColor: '#EEF',
+            },
+
+        }}
+        >
+
             <Tab.Screen name="Home" component={Home}
                 options={{
 
-                    tabBarIcon: () => (
-                        <Feather name="home" color='blue' size={24} />
+                    tabBarIcon: ({focused}) => (
+                        <Feather name="home" color={focused ? "#131313" : "D6D6D6" } size={24} />
                     ),
-                }} />
+                    tabBarLabel: "Home",
+                    tabBarActiveTintColor: "#131313",
+                    tabBarInactiveTintColor: "#777",
+                   
+                }} 
+                />
+
+
             <Tab.Screen name="Category" component={Category}
                 options={{
 
-                    tabBarIcon: () => (
-                        <Feather name="menu" color='blue' size={24} />
+                    tabBarIcon: ({focused}) => (
+                        <Feather name="menu" color={focused ? "#131313" : "D6D6D6" } size={24} />
                     ),
+                    tabBarLabel: "Categoria",
+                    tabBarActiveTintColor: "#131313",
+                    tabBarInactiveTintColor: "#777",
                 }} />
+
+
             <Tab.Screen name="Profile" component={Profile}
                 options={{
 
-                    tabBarIcon: () => (
-                        <Feather name="user" color='blue' size={24} />
+                    tabBarIcon: ({focused}) => (
+                        <Feather name="user" color={focused ? "#131313" : "D6D6D6" } size={24} />
                     ),
+                    tabBarLabel: "Perfil",
+                    tabBarActiveTintColor: "#131313",
+                    tabBarInactiveTintColor: "#777",
                 }} /> 
         </Tab.Navigator>
     );

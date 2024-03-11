@@ -4,8 +4,8 @@ import Title from '../../components/Title'
 
 export default function Home() {
     return (
-        <View styles={styles.container}>
-            <Title title={'Home'} />
+        <View style={styles.container}>
+            <Title title={"Home"} />
         </View>
     )
 }
